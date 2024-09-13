@@ -24,8 +24,12 @@ def test_cosine_similarity():
 def test_nearest_neighbor():
     ### YOUR CODE HERE
     
-    result = ### YOUR CODE HERE
-    
-    expected_index = ### YOUR CODE HERE
-    
+    target_vector = np.array([1, 2])
+    vectors = np.array([[1, 1], [2, 2], [3, 3]])
+
+    result = nearest_neighbor(target_vector, vectors)
+
+    # Since [3, 3] has a better cosine similarity than [2, 2]
+    expected_index = 2
+
     assert result == expected_index, f"Expected index {expected_index}, but got {result}"
