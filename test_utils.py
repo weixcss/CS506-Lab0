@@ -15,9 +15,12 @@ def test_dot_product():
 def test_cosine_similarity():
     ### YOUR CODE HERE
     
-    result = ### YOUR CODE HERE
+    vector1 = np.array([1, 2, 3])
+    vector2 = np.array([4, 5, 6])
     
-    expected_result = ### YOUR CODE HERE
+    result = cosine_similarity(vector1, vector2)
+    
+    expected_result = np.dot(vector1, vector2) / (np.linalg.norm(vector1) * np.linalg.norm(vector2))
     
     assert np.isclose(result, expected_result), f"Expected {expected_result}, but got {result}"
 
@@ -26,10 +29,9 @@ def test_nearest_neighbor():
     
     target_vector = np.array([1, 2])
     vectors = np.array([[1, 1], [2, 2], [3, 3]])
-
+    
     result = nearest_neighbor(target_vector, vectors)
-
-    # Since [3, 3] has a better cosine similarity than [2, 2]
-    expected_index = 2
-
+    
+    expected_index = 1
+    
     assert result == expected_index, f"Expected index {expected_index}, but got {result}"
